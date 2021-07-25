@@ -1,4 +1,6 @@
 package com.javaTutorials;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Hello world!
@@ -6,6 +8,7 @@ package com.javaTutorials;
  */
 public class App 
 {
+    private static final Logger logger=LogManager.getLogger(App.class);
     public static void main( String[] args )
     {
         MathOperation mathoperation=new MathOperation();
@@ -16,6 +19,13 @@ public class App
          */
         Integer number1=Integer.valueOf(a);
         Integer number2=Integer.valueOf(b);
+
+        logger.trace("We've just greeted the user!");
+        logger.debug("We've just greeted the user!");
+        logger.info("We've just greeted the user!");
+        logger.warn("We've just greeted the user!");
+        logger.error("We've just greeted the user!");
+        logger.fatal("We've just greeted the user!");
 
 
         System.out.println( "Addition--" + mathoperation.add(number1,number2));
